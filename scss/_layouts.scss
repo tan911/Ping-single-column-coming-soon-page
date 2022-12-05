@@ -1,0 +1,154 @@
+.header {
+  width: 100%;
+
+  &__img {
+    width: 100%;
+    max-width: 20rem;
+    margin: 2rem auto;
+    @include layout-flex;
+  }
+}
+
+.main {
+  text-align: center;
+
+  &__title {
+    font-size: clamp(0.875rem, calc(4vw + 0.859rem), 3.2rem);
+    color: $color-tertiary-light;
+    font-weight: 300;
+  }
+
+  &__span {
+    font-family: customFontSemiBold, sans-serif;
+    color: $color-tertiary-dark;
+    font-weight: 700;
+  }
+
+  &__info {
+    padding: 0.5em 0;
+    font-size: clamp(0.938rem, calc(0.625vw + 0.688rem), 1.25rem);
+    font-weight: 500;
+  }
+
+  &__form {
+    max-width: 40rem;
+    margin: 1.5rem auto 0 auto;
+
+    @include respond(laptop-portrait) {
+      max-width: 35rem;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    position: relative;
+
+    &.error {
+      padding-bottom: 2em;
+    }
+
+    &.error input {
+      border: 1.9px solid $color-secondary-dark;
+    }
+
+    &.success input {
+      border: 1.5px solid $color-secondary-light;
+    }
+
+    & span {
+      font-size: clamp(0.813rem, calc(0.25vw + 0.688rem), 0.938rem);
+      font-weight: 600;
+      position: absolute;
+      left: 25px;
+      bottom: 5px;
+      color: $color-secondary-dark;
+      font-style: italic;
+      visibility: hidden;
+
+      @include respond(phone) {
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, 50%);
+        width: 100%;
+      }
+    }
+
+    &.error span {
+      visibility: visible;
+    }
+
+    & input {
+      padding: 0.8em 1.5em;
+      width: 100%;
+      border: 1px solid $color-secondary-light;
+      border-radius: 50px;
+      outline: none;
+
+      @include respond(phone) {
+        padding: 0.7em 2rem;
+      }
+
+      &::placeholder {
+        color: $color-secondary-light;
+      }
+    }
+  }
+
+  &__img {
+    width: 100%;
+    max-width: 40rem;
+    margin: 5rem auto;
+
+    @include respond(laptop-portrait) {
+      width: 95%;
+    }
+
+    @include respond(phone) {
+      width: 90%;
+    }
+  }
+}
+
+footer {
+  max-width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+
+  @include layout-flex;
+  gap: 1rem;
+
+  &__facebook,
+  &__twitter,
+  &__instagram {
+    font-size: clamp(0.938rem, calc(0.625vw + 0.688rem), 1.25rem);
+    padding: 0.5rem;
+    height: 30px;
+    width: 30px;
+    border: 0.2px solid $color-secondary-light;
+    border-radius: 50%;
+    cursor: pointer;
+
+    @include layout-flex;
+
+    &:hover,
+    &:hover svg {
+      background-color: $color-primary;
+      fill: #fff;
+    }
+
+    & svg {
+      fill: $color-primary;
+      width: 1em;
+    }
+  }
+
+  &__copyright {
+    font-size: clamp(0.813rem, calc(0.25vw + 0.688rem), 0.938rem);
+    color: $color-tertiary-light;
+  }
+}

@@ -1,0 +1,40 @@
+form {
+  width: 100%;
+  @include layout-flex;
+  gap: 1rem;
+
+  @include respond(phone) {
+    width: 90%;
+    margin: 0 auto;
+    flex-direction: column;
+  }
+}
+
+button {
+  align-self: flex-start;
+  width: 45%;
+  color: #fff;
+  background-color: $color-primary;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 1em 0;
+  letter-spacing: 1.2px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0.5rem 1rem 2rem rgba($color-primary, 0.2);
+  cursor: pointer;
+  transition: all 0.3s;
+
+  @include respond(phone) {
+    width: 100%;
+    padding: 0.7em 2rem;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    transform: translateY(3px);
+  }
+}

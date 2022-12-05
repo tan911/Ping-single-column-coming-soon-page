@@ -1,0 +1,16 @@
+{
+  "name": "ping-coming-soon-page-master",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "watch:sass": "node-sass scss/main.scss css/style.css --watch",
+    "compile:sass": "node-sass scss/main.scss css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^8.0.0"
+  }
+}

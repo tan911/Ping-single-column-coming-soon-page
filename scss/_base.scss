@@ -1,0 +1,142 @@
+// modern css reset - https://piccalil.li/blog/a-modern-css-reset/
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+:root {
+  --font-size-small: ;
+}
+
+// FONTS
+@font-face {
+  font-family: customFontBold;
+  src: url('/assets/font/LibreFranklin-Bold.ttf');
+}
+
+@font-face {
+  font-family: customFontLight;
+  src: url('/assets/font/LibreFranklin-Light.ttf');
+}
+
+@font-face {
+  font-family: customFontSemiBold;
+  src: url('/assets/font/LibreFranklin-SemiBold.ttf');
+}
+
+// COLORS
+$color-primary: hsl(223, 87%, 63%);
+$color-secondary-light: hsl(223, 100%, 88%);
+$color-secondary-dark: hsl(354, 100%, 66%);
+$color-tertiary-light: hsl(0, 0%, 59%);
+$color-tertiary-dark: hsl(209, 33%, 12%);
+
+@mixin layout-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// QUERIES
+@mixin respond($breakpoint) {
+  //  respond to maxwidth 600
+  @if $breakpoint == phone {
+    @media (max-width: 37.5em) {
+      @content;
+    }
+  }
+
+  // respond to maxwidth of 990px
+  @if $breakpoint == laptop-portrait {
+    @media (max-width: 61.875em) {
+      @content;
+    }
+  }
+}
+
+body {
+  font-family: customFontLight, sans-serif;
+  padding: 2rem 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}

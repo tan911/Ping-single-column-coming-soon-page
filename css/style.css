@@ -1,0 +1,240 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0; }
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none; }
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth; }
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5; }
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto; }
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block; }
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit; }
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important; } }
+
+:root {
+  --font-size-small: ; }
+
+@font-face {
+  font-family: customFontBold;
+  src: url("/assets/font/LibreFranklin-Bold.ttf"); }
+
+@font-face {
+  font-family: customFontLight;
+  src: url("/assets/font/LibreFranklin-Light.ttf"); }
+
+@font-face {
+  font-family: customFontSemiBold;
+  src: url("/assets/font/LibreFranklin-SemiBold.ttf"); }
+
+body {
+  font-family: customFontLight, sans-serif;
+  padding: 2rem 0; }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }
+
+.header {
+  width: 100%; }
+  .header__img {
+    width: 100%;
+    max-width: 20rem;
+    margin: 2rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+
+.main {
+  text-align: center; }
+  .main__title {
+    font-size: clamp(0.875rem, calc(4vw + 0.859rem), 3.2rem);
+    color: #969696;
+    font-weight: 300; }
+  .main__span {
+    font-family: customFontSemiBold, sans-serif;
+    color: #151f29;
+    font-weight: 700; }
+  .main__info {
+    padding: 0.5em 0;
+    font-size: clamp(0.938rem, calc(0.625vw + 0.688rem), 1.25rem);
+    font-weight: 500; }
+  .main__form {
+    max-width: 40rem;
+    margin: 1.5rem auto 0 auto; }
+    @media (max-width: 61.875em) {
+      .main__form {
+        max-width: 35rem; } }
+  .main__input {
+    width: 100%;
+    position: relative; }
+    .main__input.error {
+      padding-bottom: 2em; }
+    .main__input.error input {
+      border: 1.9px solid #ff5263; }
+    .main__input.success input {
+      border: 1.5px solid #c2d3ff; }
+    .main__input span {
+      font-size: clamp(0.813rem, calc(0.25vw + 0.688rem), 0.938rem);
+      font-weight: 600;
+      position: absolute;
+      left: 25px;
+      bottom: 5px;
+      color: #ff5263;
+      font-style: italic;
+      visibility: hidden; }
+      @media (max-width: 37.5em) {
+        .main__input span {
+          top: 35%;
+          left: 50%;
+          transform: translate(-50%, 50%);
+          width: 100%; } }
+    .main__input.error span {
+      visibility: visible; }
+    .main__input input {
+      padding: 0.8em 1.5em;
+      width: 100%;
+      border: 1px solid #c2d3ff;
+      border-radius: 50px;
+      outline: none; }
+      @media (max-width: 37.5em) {
+        .main__input input {
+          padding: 0.7em 2rem; } }
+      .main__input input::placeholder {
+        color: #c2d3ff; }
+  .main__img {
+    width: 100%;
+    max-width: 40rem;
+    margin: 5rem auto; }
+    @media (max-width: 61.875em) {
+      .main__img {
+        width: 95%; } }
+    @media (max-width: 37.5em) {
+      .main__img {
+        width: 90%; } }
+
+footer {
+  max-width: 20rem;
+  margin: 0 auto;
+  text-align: center; }
+
+.wrapper {
+  width: 100%;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; }
+  .wrapper__facebook, .wrapper__twitter, .wrapper__instagram {
+    font-size: clamp(0.938rem, calc(0.625vw + 0.688rem), 1.25rem);
+    padding: 0.5rem;
+    height: 30px;
+    width: 30px;
+    border: 0.2px solid #c2d3ff;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .wrapper__facebook:hover,
+    .wrapper__facebook:hover svg, .wrapper__twitter:hover,
+    .wrapper__twitter:hover svg, .wrapper__instagram:hover,
+    .wrapper__instagram:hover svg {
+      background-color: #4f7df3;
+      fill: #fff; }
+    .wrapper__facebook svg, .wrapper__twitter svg, .wrapper__instagram svg {
+      fill: #4f7df3;
+      width: 1em; }
+  .wrapper__copyright {
+    font-size: clamp(0.813rem, calc(0.25vw + 0.688rem), 0.938rem);
+    color: #969696; }
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem; }
+  @media (max-width: 37.5em) {
+    form {
+      width: 90%;
+      margin: 0 auto;
+      flex-direction: column; } }
+
+button {
+  align-self: flex-start;
+  width: 45%;
+  color: #fff;
+  background-color: #4f7df3;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 1em 0;
+  letter-spacing: 1.2px;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0.5rem 1rem 2rem rgba(79, 125, 243, 0.2);
+  cursor: pointer;
+  transition: all 0.3s; }
+  @media (max-width: 37.5em) {
+    button {
+      width: 100%;
+      padding: 0.7em 2rem; } }
+  button:hover {
+    opacity: 0.8; }
+  button:active {
+    transform: translateY(3px); }
