@@ -14,6 +14,8 @@ const isEmailValid = input => {
 
   if (email !== null) {
     displaySuccess(input);
+  } else if (input.value === '') {
+    displayError(input, 'Whoops! It looks like you forgot to add your email');
   } else {
     displayError(input, 'Please provide a valid email address');
   }
